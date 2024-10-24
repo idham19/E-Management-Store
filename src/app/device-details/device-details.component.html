@@ -1,1 +1,35 @@
 
+<div class="device-details">
+    
+    <div class="device-info">
+        <div class="image">
+            <img [src]="device.image" alt="">
+        </div>
+        
+        <div class="name">
+            <h3>{{device.brand}}</h3>
+        </div>
+        <div class="info">
+            <p>Model: {{device.model}}</p>
+        </div>
+        <div class="info">
+            <p>Type: {{device.type}}</p>
+        </div>
+        <div class="screenSize">
+            <p>Screen: {{device.screenSize}}</p>
+        </div>
+
+        <div [ngClass]="{strikethrough: device.discount>0}">
+            <p class="price">Price: {{device.price | currency:"USD"}}</p>
+        </div>
+        <div *ngIf="device.discount>0" class="discount">
+            <p>Price: {{device.price- device.discount | currency:"USD"}}</p>
+        </div>
+        
+    </div>
+
+    <!-- buy button for each device-->
+    <button >Buy</button>
+    <button class="manage">Manage</button>
+
+</div>

@@ -5,6 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './device-details.component.html',
   styleUrls: ['./device-details.component.css']
 })
+
 export class DeviceDetailsComponent {
 
+ public device!:any;
+
+ constructor(){
+ }
+
+
+
 }
+
