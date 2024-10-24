@@ -1,16 +1,16 @@
 <div class="container">
     <div class="filters">
-      <a class="button" >Phone</a>
-      <a class="button"  >TV</a>
-      <a class="button"  >Tablet</a>
-      <a class="button" >Laptop</a>
-      <a class="button" >All</a>
+      <a class="button" (click)="filter='Phone'">Phone</a>
+      <a class="button" (click)="filter='TV'" >TV</a>
+      <a class="button" (click)="filter='Tablet'" >Tablet</a>
+      <a class="button" (click)="filter='Laptop'">Laptop</a>
+      <a class="button" (click)="filter=''">All</a>
     </div>
   
     <div class="products">
-      <article class="product-item" >
+      <article class="product-item" *ngFor="let device of getFiltredDevice()">
 
-       <app-device-details ></app-device-details>
+       <app-device-details [device]="device" (buy)="addDevice(device)" ></app-device-details>
        
       </article>
     </div>
