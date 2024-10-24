@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { DeciceDetailsComponent } from './decice-details/decice-details.component';
+
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 
 @NgModule({
@@ -15,7 +15,6 @@ import { DeviceDetailsComponent } from './device-details/device-details.componen
     HomeComponent,
     SiteHeaderComponent,
     CatalogComponent,
-    DeciceDetailsComponent,
     DeviceDetailsComponent
   ],
   imports: [
