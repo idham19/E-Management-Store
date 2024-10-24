@@ -10,7 +10,7 @@
     <div class="products">
       <article class="product-item" *ngFor="let device of getFiltredDevice()">
 
-       <app-device-details [device]="device" (buy)="addDevice(device)" ></app-device-details>
+       <app-device-details [device]="device"  ></app-device-details>
        
       </article>
     </div>

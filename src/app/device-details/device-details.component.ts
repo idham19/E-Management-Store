@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IDevice } from './device.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-device-details',
@@ -7,11 +9,10 @@ import { Component } from '@angular/core';
 })
 
 export class DeviceDetailsComponent {
-
- public device!:any;
-
- constructor(){
+@Input() device!:any;
+ constructor(private router:Router){
  }
+
 
 
 
