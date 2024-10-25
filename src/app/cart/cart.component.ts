@@ -1,45 +1,46 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { CartService } from './cart.service';
 import { IDevice } from '../device-details/device.model';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
-export class CartService {
- private cartSubject = new BehaviorSubject<IDevice[]>([])
- public cart$:Observable<IDevice[]>=this.cartSubject.asObservable()
+export class CartComponent {
+ public cart:IDevice[]=[]
+ constructor(private cartSvc : CartService){}
 
-  constructor(private http:HttpClient) { 
-    this.getCart().subscribe((cartData)=>{
-        this.cartSubject.next(cartData)
-    })
-
+ ngOnInit(){
+  this.cartSvc.cart$.subscribe((cart)=>
+    // we update the local cart 
+    this.cart=cart
+  )
+ }
+ public getCartItems(){
+   return this.cart
+ }
+public getcartTotal() {
+  let result=0
+    this.cart.map((device)=>{
+    let price= device.discount>0 
+    ?device.price-device.discount 
+    :device.price
+    result+=price
   }
- 
-  public getCart():Observable<IDevice[]>{
-   return this.http.get<IDevice[]>("/api/carts")
-  }
+)
+return result
 
-  // add device to cart 
-  public add(device:IDevice){
-      this.http.post("/api/carts",device).subscribe(()=>{
-      console.log(`Device ${device.model} added to cart`);
-      //refresh the cart 
-        this.getCart().subscribe((cartData)=>{
-        this.cartSubject.next(cartData)
-      })
-    })
+}
 
-  }
+removeFromCart(device: IDevice) {
+  this.cartSvc.deleteDeviceFromCart(device);
+}
 
-  public deleteDeviceFromCart(device:any){
-      this.http.delete(`/api/carts/${device.id}`).subscribe(()=>{
-      console.log(`Device ${device.model} removed from the cart`);
-      //refresh the cart
-        this.getCart().subscribe((cartData)=>{
-        this.cartSubject.next(cartData)
-      })
-    })
-  }
+getImageUrl(device: IDevice) {
+  if (!device) return '';
+  return  device.image
+}
+
+
 }
