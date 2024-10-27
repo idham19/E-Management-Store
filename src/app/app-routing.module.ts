@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { AddFormComponent } from './add-form/add-form.component';
 
 
 const routes: Routes = [
 {path:"",redirectTo:'/home',pathMatch:"full"},
 {path:"home",component:HomeComponent},
 {path:"cart",component:CartComponent},
+{path:"add-form",component:AddFormComponent},
 {path:"catalog",component:CatalogComponent},
 
 ];

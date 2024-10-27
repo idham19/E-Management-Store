@@ -1,0 +1,40 @@
+<form  [formGroup]="deviceForm" (ngSubmit)="onSubmit($event)">
+    <!-- <h2 className="addNewItem">Add New Device</h2> -->
+     <h2>{{ deviceId>0 ? 'Manage Device' : 'Add New Device'}}</h2>
+     <img *ngIf="deviceId>0" class="imageForm" [src]="imagUrl" alt="image name">
+
+    <label htmlFor="item-name" >Type:</label>
+    <input type="text"  formControlName="type" />
+    <br />
+
+    <label htmlFor="description"> Model:</label>
+    <input type="text" id="description"  formControlName="model"/>
+    <br />
+
+    <label >Brand:</label>
+    <input type="text" id="price" formControlName="brand"  />
+    <br />
+
+    <label htmlFor="category">Screen Size:</label>
+    <input type="text" id="category" formControlName="screenSize"  />
+    <br />
+    <label htmlFor="category">Price:</label>
+    <input type="number" id="category" formControlName="price" />
+    <br />
+    <label htmlFor="category">Discount:</label>
+    <input type="number" id="category" formControlName="discount"  />
+    <br />
+
+    <label htmlFor="image">Image:</label>
+    <input type="text" id="image" formControlName="image" />
+    <br />
+     <div  >
+        <div *ngIf="deviceId===0">
+           <button  type="submit" value="Add Item" >Add Item</button>
+        </div>
+        <div *ngIf="deviceId>0" class="all-buttons">
+            <button  type="submit" value="Edit Item" >Edit Item</button>
+            <button  type="submit" value="Delete Item">Delete Item</button>
+        </div>
+    </div>
+</form>

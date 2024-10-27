@@ -10,6 +10,8 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { AddFormComponent } from './add-form/add-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,16 @@ import { CartComponent } from './cart/cart.component';
     SiteHeaderComponent,
     CatalogComponent,
     DeviceDetailsComponent,
-    CartComponent
+    CartComponent,
+    AddFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
 
   ],
   providers: [],

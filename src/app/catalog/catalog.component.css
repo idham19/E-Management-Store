@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
   }
   .filters {
     display: flex;
@@ -51,6 +52,7 @@
     transition: all 0.4s;
     background-color: white;
     cursor: pointer;
+    flex-basis: 200px;
   }
   article:hover {
     background-color: beige;
