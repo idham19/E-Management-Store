@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CatalogComponent,
     DeviceDetailsComponent,
     CartComponent,
-    AddFormComponent
+    AddFormComponent,
+    SignInComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

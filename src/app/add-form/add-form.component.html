@@ -1,5 +1,4 @@
 <form  [formGroup]="deviceForm" (ngSubmit)="onSubmit($event)">
-    <!-- <h2 className="addNewItem">Add New Device</h2> -->
      <h2>{{ deviceId>0 ? 'Manage Device' : 'Add New Device'}}</h2>
      <img *ngIf="deviceId>0" class="imageForm" [src]="imagUrl" alt="image name">
 
