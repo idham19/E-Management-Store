@@ -1,1 +1,22 @@
-<p>sign-in works!</p>
+<form >
+    
+    <h2>Log In</h2>
+    
+    <div class="email">
+        <label>Email:</label>
+        <input    type="email"  name="email" required>
+        <em class="error" >Email is not valid</em>
+      </div>
+      
+      <div class=" password">
+        <label>Password:</label>
+        <input  type="password"  name="password" required formControlName="password">
+        <em class="error">Password is not valid</em>
+      </div>
+        
+       <div class="all-buttons">
+         <button type="submit" >Log In</button>
+         <button type="submit" >Register</button>
+        </div>
+    </form>
+    
