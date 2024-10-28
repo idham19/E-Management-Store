@@ -10,9 +10,14 @@ import { Router } from '@angular/router';
 
 export class DeviceDetailsComponent {
 @Input() device!:any;
+@Output() buy = new EventEmitter();
+
  constructor(private router:Router){
  }
 
+ buyButtonClicked(){
+  this.buy.emit()
+ }
 
 
 
