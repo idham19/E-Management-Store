@@ -18,8 +18,9 @@ export class DeviceDetailsComponent {
  buyButtonClicked(){
   this.buy.emit()
  }
-
-
+ getToManagePage(deviceId:number){
+  this.router.navigate(['/add-form',deviceId])
+ }
 
 }
 
