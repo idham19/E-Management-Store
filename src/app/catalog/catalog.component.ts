@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IDevice } from '../device-details/device.model';
 import { DeviceService } from '../device-details/device.service';
+import { CartService } from '../cart/cart.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,6 +16,8 @@ filter:String =""
 devices!:IDevice[];
 constructor(
   private deviceSvc:DeviceService,
+  private cartSvc:CartService,
+  private router:Router
 ){}
 
 ngOnInit(){
@@ -31,5 +35,8 @@ device.type===this.filter
 )
 }
 
-
+addDevice(device:IDevice){
+  this.cartSvc.addToCart(device)
+  this.router.navigate(["/cart"])
+ }
 }
