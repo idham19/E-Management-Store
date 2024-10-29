@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SignInService } from './sign-in.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -9,14 +11,33 @@ import { Observable } from 'rxjs';
 })
 export class SignInComponent {
 
-constructor(private http:HttpClient){}
+ isLoggedIn=false
 
-public loginPostUser(email:any,password:any):Observable<any>{
-return this.http.post("/api/auth/login",{email,password})
-}
+ loginForm = new FormGroup({
+ email: new FormControl('', [Validators.required, Validators.email]),
+ password: new FormControl('', Validators.required)
+});
 
-public registerPostUser(email:string,password:string):Observable<any>{
-  return this.http.post("/api/auth/register",{email,password})
-  }
-  
+ constructor(
+   private router:Router,
+   private signInSvc:SignInService){}
+   
+
+  signIn() {
+    if (this.loginForm.valid){
+       let email:any =this.loginForm.value.email;
+       let password:any=this.loginForm.value.password
+      this.signInSvc.loginPostUser(email, password).subscribe({
+        next: () => {
+          console.log("Signed in successfully");
+          this.router.navigate(["/home"]);
+        },
+        error: error => {
+          alert("Incorrect Password/Email");
+          console.error("Incorrect Password/Email", error);
+        }
+      });
+    }
+   }
+
 }
