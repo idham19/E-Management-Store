@@ -34,7 +34,6 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     FormsModule
 
-
   ],
   providers: [],
   bootstrap: [AppComponent]

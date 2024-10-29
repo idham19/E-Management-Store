@@ -1,22 +1,22 @@
-<form >
+<form  (ngSubmit)="signIn()">
     
-    <h2>Log In</h2>
+  <h2>Log In</h2>
+  
+  <div class="email">
+      <label>Email:</label>
+      <input    type="email" formControlName="email"  name="email" required>
+      <em class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Email is not valid</em>
+    </div>
     
-    <div class="email">
-        <label>Email:</label>
-        <input    type="email"  name="email" required>
-        <em class="error" >Email is not valid</em>
-      </div>
+    <div class=" password">
+      <label>Password:</label>
+      <input  type="password" formControlName="password" name="password" required formControlName="password">
+      <em class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Password is not valid</em>
+    </div>
       
-      <div class=" password">
-        <label>Password:</label>
-        <input  type="password"  name="password" required formControlName="password">
-        <em class="error">Password is not valid</em>
+     <div class="all-buttons">
+       <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+       <button type="submit" routerLink="/register" >Register</button>
       </div>
-        
-       <div class="all-buttons">
-         <button type="submit" >Log In</button>
-         <button type="submit" >Register</button>
-        </div>
-    </form>
-    
+  </form>
+  
