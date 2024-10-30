@@ -1,10 +1,17 @@
 <div class="container">
-    <a routerLink="/home">Home</a>
-    <a routerLink="/catalog">Catalog</a>
-    <div class="cart">
+  <div class="header" *ngIf="isLoggedIn==false">
+  <h2 class="signInHeader">Welcome to E-Manager-Store</h2>
+  </div>
+    <a routerLink="/home"*ngIf="isLoggedIn">Home</a>
+    <a routerLink="/catalog"*ngIf="isLoggedIn">Catalog</a>
+    <div class="addForm" *ngIf="isLoggedIn">
       <a routerLink="/add-form">Add Device</a>
     </div>
     <div class="cart">
-      <a routerLink="/cart">Cart</a>
+      <a routerLink="/cart" *ngIf="isLoggedIn">Cart</a>
     </div>
+    <div class="logOut" *ngIf="isLoggedIn">
+      <a (click)="logOut()">Log out</a>
+    </div>
+   
 </div>

@@ -1,4 +1,47 @@
-# ProjectName
+# Full-Stack Store Management Application
+
+**Author**: Mahdi
+
+## Overview
+Welcome to my full-stack application! This project is designed to provide a secure, user-friendly experience for managing a store catalog, allowing users to register, sign in, and interact with various products.
+
+## Key Components
+
+- **Catalog**: The catalog is one of the main components of this application. Here, users can view different types of devices, such as:
+  - Phones
+  - Tablets
+  - TVs
+  - Laptops
+
+  Users have the following options for managing devices:
+  - **Add** new devices to the catalog.
+  - **Update** details of existing devices.
+  - **Remove** devices from the catalog as needed.
+
+## Technology Stack
+
+### Front-End
+- **Framework**: Angular (version 16) with TypeScript.
+- **IDE**: Visual Studio Code.
+
+### Back-End
+- **Framework**: Spring Boot (version 3.3.5) with Java (version 23).
+- **Database**: MySQL.
+- **Build Tool**: Maven.
+- **IDE**: IntelliJ IDEA.
+
+### Additional Tools
+- **API Testing**: Postman for testing API endpoints.
+
+## Features
+
+- **Secure Login**: Users must log in before accessing the catalog. The login form includes validation on both email and password fields to ensure required information is provided. The login button remains disabled if either field is left empty.
+  
+- **Device Management**: The catalog allows users to:
+  - **View** available devices in the store.
+  - **Add** devices to the catalog.
+  - **Update** device details.
+  - **Remove** devices from the catalog.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 

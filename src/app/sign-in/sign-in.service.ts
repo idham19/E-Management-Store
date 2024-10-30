@@ -17,4 +17,6 @@ public registerPostUser(email:string,password:string):Observable<any>{
 return this.http.post("/api/auth/register",{email,password})
 }
 
+
+
 }

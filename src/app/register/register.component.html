@@ -1,17 +1,16 @@
-<form >
-    <h2>Register</h2>
+<form [formGroup]="loginForm" (ngSubmit)="register()">
+  <h2>Register</h2>
 
-     <div class="email">
-      <label>Email:</label>
-      <input    type="email" formControlName="email"  name="email" required>
-      <em class="error" >Email is not valid</em>
+   <div class="email">
+    <label>Email:</label>
+    <input    type="email" formControlName="email"  name="email" required>
+    <em class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Email is not valid</em>
+  </div>
+  <input  [(ngModel)]="password" type="password"  name="password" required formControlName="password">
+
+   <div class="all-buttons">
+
+     <button type="submit" >Register</button>
+     <button type="button" (click)="goBackToSignPage()" routerLink="/singIn">Back</button>
     </div>
-    <input  type="password"  name="password" required >
-
-     <div class="all-buttons">
-
-       <button type="submit">Register</button>
-       <button type="button">Back</button>
-      </div>
-  </form>
-  
+</form>
