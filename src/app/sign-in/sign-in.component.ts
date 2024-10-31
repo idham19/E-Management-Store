@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SignInService } from './sign-in.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -21,8 +21,16 @@ export class SignInComponent {
 
  constructor(
    private router:Router,
-   private signInSvc:SignInService){}
+   private signInSvc:SignInService,
+   private authSvc:AuthService ,
+
+  ){}
    
+   ngOnInit(){
+    this.authSvc.isLogginIn$.subscribe((state)=>{
+     this.isLoggedIn=state
+    })
+   }
 
   signIn() {
     if (this.loginForm.valid){
@@ -31,6 +39,7 @@ export class SignInComponent {
       this.signInSvc.loginPostUser(email, password).subscribe({
         next: () => {
           console.log("Signed in successfully");
+          this.authSvc.setAuthState(true);
           this.router.navigate(["/home"]);
         },
         error: error => {
