@@ -1,9 +1,9 @@
 {
   "/": {
-    "target": "https://e-management-store-server-1.onrender.com",
+    "target": "https://e-management-store-server.onrender.com",
     "secure": false,
     "changeOrigin": true,
-  
+
     "logLevel": "debug"
   }
 }
