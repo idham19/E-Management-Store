@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { IDevice } from '../device-details/device.model';
+import { environment } from '../../environments/environment.prod';
 
 
 @Injectable({
@@ -13,18 +14,18 @@ export class DeviceService {
 
 
   getDevices():Observable<IDevice[]>{
-    return this.http.get<IDevice[]>('/api/devices')
+    return this.http.get<IDevice[]>(`${environment.apiUrl}/devices`)
   }
   addDevice(device:IDevice):Observable<IDevice>{
-    return this.http.post<IDevice>("/api/devices",device)
+    return this.http.post<IDevice>(`${environment.apiUrl}/devices`,device)
   }
   getDeviceById(id: number): Observable<IDevice> {
-    return this.http.get<IDevice>(`/api/devices/${id}`);
+    return this.http.get<IDevice>(`${environment.apiUrl}/devices/${id}`);
   }
   deleteDeviceById(id:number):Observable<any>{
-   return this.http.delete(`/api/devices/${id}`)
+   return this.http.delete(`${environment.apiUrl}/devices/${id}`)
   }
   upDateDevice(id:number,device:IDevice):Observable<IDevice>{
-    return this.http.put<IDevice>(`/api/devices/${id}`,device)
+    return this.http.put<IDevice>(`${environment.apiUrl}/devices/${id}`,device)
   }
 }
