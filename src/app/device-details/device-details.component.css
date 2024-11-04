@@ -67,3 +67,26 @@ button:hover{
     font-size: 1.3rem;
     font-weight: bold;
   }
+  @media screen and (max-width: 550px) {
+    button{
+      position: absolute;
+      border: 1px solid;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-size: 0.5rem;
+      color: rgb(0, 0, 0);
+      background-color: white;
+      bottom: 0%;
+      left:40%;
+      visibility: hidden;
+      transition: all 0.4s;
+      cursor: pointer;
+      transform: scale(1);
+  
+  }
+    .device-details:hover button{
+      visibility: visible;
+      transform: scale(1.1);
+  }
+
+  }

@@ -110,3 +110,59 @@ form {
     color: #fff;
     font-weight: bold;
   }
+
+  
+  @media screen and (max-width: 550px) {
+    form {
+      background-color: #f9f9f9;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: auto;
+      font-family: Arial, sans-serif;
+      height: auto;
+      border: solid 0.5px grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0.9rem 0.5rem rgba(0.2, 0.2, 0.2, 0.2);
+    }
+  
+    /* Input fields styling */
+    input[type="email"],
+    input[type="password"],
+    .searchInput,
+    textarea {
+      width: 90%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: #fff;
+      box-sizing: border-box;
+    }
+    /* Label styling */
+    label {
+      text-align: left;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #232020;
+      padding: 5px;
+      font-size: 12px;
+      width: 87%;
+    }
+    button {
+      width: 38%;
+      padding: 8px;
+      background-color: #000000;
+      color: white;
+      font-size: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+    }
+  }
