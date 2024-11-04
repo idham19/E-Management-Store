@@ -14,6 +14,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     CartComponent,
     AddFormComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
