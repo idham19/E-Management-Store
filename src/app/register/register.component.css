@@ -112,6 +112,7 @@ form {
   }
 
   
+  
   @media screen and (max-width: 550px) {
     form {
       background-color: #f9f9f9;
@@ -133,7 +134,7 @@ form {
     input[type="password"],
     .searchInput,
     textarea {
-      width: 90%;
+      width:100%;
       padding: 5px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
@@ -152,7 +153,7 @@ form {
       background-color: #232020;
       padding: 5px;
       font-size: 12px;
-      width: 87%;
+      width: 98%;
     }
     button {
       width: 38%;
