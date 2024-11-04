@@ -2,8 +2,19 @@
 
 **Author**: Mahdi
 
+
 ## Overview
 Welcome to my full-stack application! This project is designed to provide a secure, user-friendly experience for managing a store catalog, allowing users to register, sign in, and interact with various products.
+
+### Important Note
+**Please note:** You will need to first register and then log in to access the application.
+
+Since this application is hosted on a free Render instance, it may take approximately **1 minute for the server to process registration requests**. Free Render instances go into a "sleep" mode after periods of inactivity, which can delay initial responses by up to **50 seconds or more**.
+
+---
+
+Thank you for your patience as the server initializes!
+
 
 ## Key Components
 
@@ -17,6 +28,10 @@ Welcome to my full-stack application! This project is designed to provide a secu
   - **Add** new devices to the catalog.
   - **Update** details of existing devices.
   - **Remove** devices from the catalog as needed.
+
+ ## Youtube Video
+ [![Watch the video](./src/assets/images/youtube-screen-shot.png)](https://youtu.be/szTGdXL6CaU)
+
 
 ## Technology Stack
 
