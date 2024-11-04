@@ -4,7 +4,7 @@
 
 
 ## Overview
-Welcome to my full-stack application! This project is designed to provide a secure, user-friendly experience for managing a store catalog, allowing users to register, sign in, and interact with various products.
+Welcome to my full-stack application! This project is designed to provide a secure, user-friendly experience for managing a store catalog, allowing users to register, sign in, and interact with various products. The web app is also fully mobile responsive, ensuring a seamless and optimized experience across all devices, from desktops to tablets and mobile phones
 
 ### Important Note
 **Please note:** You will need to first register and then log in to access the application.
