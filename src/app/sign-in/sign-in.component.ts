@@ -52,7 +52,6 @@ export class SignInComponent {
       });
     }
     else {
-      this.isLoading=true
       this.isLoading=false;
       alert("Pleas Enter you Password and Email, or Register")
     }
